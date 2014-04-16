@@ -7,6 +7,7 @@ class Dude < ActiveRecord::Base
 
   scope :featured, where(featured: true)
   scope :regular, where(featured: false)
+  scope :approved, where(verified: true)
 
   before_save :set_avatar, if: Proc.new { |user|
     user.respond_to?(:twitter_changed?) and user.twitter_changed?

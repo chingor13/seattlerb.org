@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140402025519) do
+ActiveRecord::Schema.define(:version => 20140416032154) do
 
   create_table "affiliations", :force => true do |t|
     t.integer "dude_id"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(:version => 20140402025519) do
     t.string   "twitter"
     t.string   "github"
     t.string   "image_url"
+    t.boolean  "verified",                    :default => false
   end
 
   create_table "projects", :force => true do |t|

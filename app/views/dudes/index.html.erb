@@ -1,4 +1,4 @@
-<% @people.each do |person| %>
+<% @dudes.each do |person| %>
   <div class='featured profile row'>
     <div class='span1'>
       <%= image_tag person.image_url %>
@@ -14,15 +14,10 @@
         <%= raw website_link  person %>
         <%= raw email_link    person %>
       </ul>
-
-      <%#
-         projs = person.projects.sort_by { |p| p.name.downcase }.map { |p|
-           link_to p.name, p.url
-         }
-       %>
-
-      <%# raw projs.join ", " %>
-
     </div>
   </div>
 <% end %>
+
+<div class='actions'>
+  <%= link_to "Join Us!", new_dude_path, :class => "btn" %>
+</div>

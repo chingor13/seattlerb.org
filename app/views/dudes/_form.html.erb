@@ -1,0 +1,36 @@
+<%= form_for(dude) do |form| %>
+  <% if dude.errors.present? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(dude.errors.count, "error") %> prohibited this talk from being saved:</h2>
+
+      <ul>
+      <% dude.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form.label :name, "Name (required)" %>
+  <%= form.text_field :name %>
+
+  <%= form.label :email, "Email address" %>
+  <%= form.text_field :email %>
+
+  <%= form.label :bio, "About me" %>
+  <%= form.text_area :bio, :rows => 3 %>
+
+  <%= form.label :website %>
+  <%= form.text_field :website %>
+
+  <%= form.label :ruby_gems_id, "Rubygems username (required)" %>
+  <%= form.text_field :ruby_gems_id %>
+
+  <%= form.label :twitter, "Twitter handle" %>
+  <%= form.text_field :twitter %>
+
+  <%= form.label :github, "Github handle" %>
+  <%= form.text_field :github %>
+
+  <%= form.submit "Submit", :class => "btn" %>
+<% end %>

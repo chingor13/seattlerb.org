@@ -12,10 +12,10 @@ SeattlerbOrg::Application.routes.draw do
   get "/talks/past" => "talks#past"
 
   resources :talks
+  resources :dudes, :path => 'people', :only => [:new, :create, :index]
 
   post "/newsletter" => "newsletter#subscribe", as: :subscribe
 
-  match "/people"   => "about#people",   as: :people
   match "/projects" => "about#projects", as: :projects
   match "/join-us"  => "about#join_us",  as: :join_us
 
